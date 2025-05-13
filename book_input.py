@@ -5,29 +5,29 @@ import json
 client = OpenAI()
 
 instructions = (
-    "You are an expert literary analyst and book recommender. "
-    "Given a single book title, your task is to return 10 book recommendations that closely match the original "
-    "in terms of themes, tone, genre, and emotional impact. Each recommendation must be thoughtfully selected "
-    "based on deep understanding of the original book’s content. We want to give unique recommendations\n\n"
-    'Respond with a JSON object containing a single key: "recommendations", which is a list of 10 ISBNs '
-    "(preferably ISBN-13) representing your recommended books. Do not include any explanations or book titles—just the JSON response.\n\n"
+    "You are an expert in books of all genres and themes. When given a book title, "
+    "return a list of 10 book recommendations that are similar in theme, tone, or genre. "
+    "Only include books that are distinct from the original and from each other — no duplicates. "
+    "Return the output strictly as a JSON object with a single key 'recommendations' whose value is "
+    "a list of 10 ISBN-13 numbers of the recommended books.\n\n"
     "Example input:\n"
-    '"From Blood and Ash"\n\n'
-    "Expected output format:\n"
+    '"A Court of Thorns and Roses"\n\n'
+    "Example output:\n"
     "{\n"
     '  "recommendations": [\n'
-    '    "9781250238795",\n'
-    '    "9781682815885",\n'
-    '    "9781250750112",\n'
-    '    "9780349420880",\n'
-    '    "9780349420897",\n'
-    '    "9780349420897",\n'
-    '    "9781250196231",\n'
-    '    "9780062678416",\n'
-    '    "9780553573404",\n'
-    '    "9780345538374"\n'
+    '    "9781619630345",\n'
+    '    "9781649374042",\n'
+    '    "9781952457005",\n'
+    '    "9780062878021",\n'
+    '    "9780316310277",\n'
+    '    "9781635574043",\n'
+    '    "9781595148049",\n'
+    '    "9781250268396",\n'
+    '    "9780008609199",\n'
+    '    "9781250189967"\n'
     "  ]\n"
-    "}"
+    "}\n\n"
+    "Do not include any additional explanation or commentary — just return the JSON object."
 )
 
 
